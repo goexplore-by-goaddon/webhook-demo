@@ -4,7 +4,7 @@
 
 	{% assign tasks_insertion = "create_task" | webhook: company_id: account._id, name: params.name, id: task_id %}
 
-	{% if tasks_insertion.code == 200 %}
+	{% if tasks_insertion.code != 201 %}
 		alertify.error("{{ l.not_created }}");
 	{% else %}
 		{% assign task_name = params.name %}
