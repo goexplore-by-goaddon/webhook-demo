@@ -8,8 +8,6 @@
 
 <div class="mt-5" data-id="tasks">
 	{% for task in tasks %}
-		{% assign task_id 	= task._id %}
-		{% assign task_name = task.name %}
 		{% include "tasks/task" %}
 	{% endfor %}
 </div>

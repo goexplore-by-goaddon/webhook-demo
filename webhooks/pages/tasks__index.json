@@ -1,0 +1,9 @@
+{
+	"tasks": {
+		"method": "post",
+		"url": "https://jsonplaceholder.typicode.com/todos",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	}
+}
