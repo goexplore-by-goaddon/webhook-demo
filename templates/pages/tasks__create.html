@@ -1,8 +1,10 @@
 {% if account != nil %}
 
-	{% assign tasks_insertion = "create_task" | db_insert_one: company_id: account._id, name: params.name %}
+	{% assign id = _id_new %}
 
-	{% if tasks_insertion._id == nil %}
+	{% assign tasks_insertion = "create_task" | webhook: company_id: account._id, name: params.name, id: id %}
+
+	{% if tasks_insertion.code == 200 %}
 		alertify.error("{{ l.not_created }}");
 	{% else %}
 		{% assign task_id 	= tasks_insertion._id %}

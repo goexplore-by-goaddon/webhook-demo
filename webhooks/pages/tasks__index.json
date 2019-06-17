@@ -1,7 +1,7 @@
 {
 	"tasks": {
 		"method": "get",
-		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks",
+		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks?company_id={{ company_id }}",
 		"headers": {
 			"Content-Type": "application/json"
 		}

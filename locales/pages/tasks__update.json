@@ -1,7 +1,8 @@
 {
 	"en": {
 		"updated": "You've updated the task",
-		"not_updated": "The task wasn't found",
-		"not_updated": "The task wasn't updated"
+		"not_found": "The task wasn't found",
+		"not_updated": "The task wasn't updated",
+		"unknown_error": "An unknown error occured while trying to update the task"
 	}
 }

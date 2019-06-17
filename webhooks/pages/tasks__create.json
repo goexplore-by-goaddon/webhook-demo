@@ -1,13 +1,14 @@
 {
-	"callback": {
+	"create_task": {
 		"method": "post",
-		"url": "https://example.com/api/v1/tasks",
+		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks",
 		"headers": {
-			"Authorization": "foo",
 			"Content-Type": "application/json"
 		},
 		"body": {
-			"name": "{{ name }}"
+			"id": "{{ id }}",
+			"name": "{{ name }}",
+			"company_id": "{{ company_id }}"
 		}
 	}
 }

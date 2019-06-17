@@ -1,12 +1,18 @@
 {% if account != nil %}
 
-	{% assign tasks_update = "update_task" | db_update_one: company_id: account._id, name: params.name, _id: params.id %}
+	{% assign tasks_response 	= "tasks" | webhook: company_id: account._id, id: params.id %}
+	{% assign task 						= tasks_response.body.first %}
 
-	{% if tasks_update.matched_count != 1 %}
+	{% if tasks == nil %}
 		alertify.error("{{ l.not_found }}");
-	{% elsif tasks_update.updated_count != 1 %}
+	{% elsif task.name == params.name %}
 		alertify.message("{{ l.not_updated }}");
 	{% else %}
-		alertify.success("{{ l.updated }}");
+		{% assign tasks_update = "update_task" | webhook: name: params.name, id: params.id %}
+		{% if tasks_update.code != 200 %}
+			alertify.error("{{ l.unknown_error }}");
+		{% else %}
+			alertify.success("{{ l.updated }}");
+		{% endif %}
 	{% endif %}
 {% endif %}

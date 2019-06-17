@@ -1,13 +1,18 @@
 {
-	"callback": {
-		"method": "patch",
-		"url": "https://example.com/api/v1/tasks/{{ _id }}",
+	"tasks": {
+		"method": "get",
+		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks/{{ id }}?company_id={{ company_id }}",
 		"headers": {
-			"Authorization": "foo",
+			"Content-Type": "application/json"
+		}
+	},
+	"update_task": {
+		"method": "patch",
+		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks/{{ id }}",
+		"headers": {
 			"Content-Type": "application/json"
 		},
 		"body": {
-			"_id": "{{ _id }}",
 			"name": "{{ name }}"
 		}
 	}
