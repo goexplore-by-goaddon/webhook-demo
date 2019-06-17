@@ -1,9 +1,0 @@
-{
-	"create_task": {
-		"klass": "tasks",
-		"document": {
-			"company_id": "{{ company_id }}",
-			"name": "{{ name }}"
-		}
-	}
-}

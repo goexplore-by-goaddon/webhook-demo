@@ -1,7 +1,7 @@
 {% if account != nil %}
 
 	{% assign tasks_response 	= "tasks" | webhook: company_id: account._id, id: params.id %}
-	{% assign task 						= tasks_response.body.first %}
+	{% assign task 						= tasks_response.body %}
 
 	{% if task != nil %}
 
