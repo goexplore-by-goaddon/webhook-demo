@@ -1,0 +1,14 @@
+{% if account != nil %}
+
+	{% assign tasks_insertion = "create_task" | db_insert_one: company_id: account._id, name: params.name %}
+
+	{% if tasks_insertion._id == nil %}
+		alertify.error("{{ l.not_created }}");
+	{% else %}
+		{% assign task_id 	= tasks_insertion._id %}
+		{% assign task_name = params.name %}
+		$('[data-id="create_task"]').find(":input[name='name']").val("");
+		$('[data-id="tasks"]').prepend('{% include "tasks/task" %}');
+		alertify.success("{{ l.created }}");
+	{% endif %}
+{% endif %}

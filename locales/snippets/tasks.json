@@ -1,0 +1,11 @@
+{
+	"en": {
+		"headline": "Tasks",
+		"placeholders": {
+			"name": "Enter task name..."
+		},
+		"buttons": {
+			"create": "Create"
+		}
+	}
+}

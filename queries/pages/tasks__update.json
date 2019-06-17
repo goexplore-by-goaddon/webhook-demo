@@ -1,0 +1,12 @@
+{
+	"update_task": {
+		"klass": "tasks",
+		"query": {
+			"company_id": "{{ company_id }}",
+			"_id": "{{ _id }}"
+		},
+		"document": {
+			"name": "{{ name }}"
+		}
+	}
+}

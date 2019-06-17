@@ -1,0 +1,13 @@
+{% if account != nil %}
+
+	{% assign tasks_deletion = "destroy_task" | db_delete_one: company_id: account._id, _id: params.id %}
+
+	{% if tasks_deletion.destroyed_count != 1 %}
+		alertify.error("{{ l.not_destroyed }}");
+	{% else %}
+		var task = $('[data-id="' + "{{ params.id }}" + '"]');
+		task.prev("hr").remove();
+		task.remove();
+		alertify.message("{{ l.destroyed }}");
+	{% endif %}
+{% endif %}

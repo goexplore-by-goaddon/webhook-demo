@@ -1,0 +1,13 @@
+{
+	"tasks": {
+		"klass": "tasks",
+		"query": {
+			"company_id": "{{ company_id }}",
+			"_id": "{{ _id }}"
+		},
+		"projection": {
+			"_id": 1,
+			"name": 1
+		}
+	}
+}

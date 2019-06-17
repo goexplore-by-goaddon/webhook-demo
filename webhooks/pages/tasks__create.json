@@ -1,0 +1,13 @@
+{
+	"callback": {
+		"method": "post",
+		"url": "https://example.com/api/v1/tasks",
+		"headers": {
+			"Authorization": "foo",
+			"Content-Type": "application/json"
+		},
+		"body": {
+			"name": "{{ name }}"
+		}
+	}
+}

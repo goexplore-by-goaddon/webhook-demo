@@ -1,0 +1,8 @@
+{% if account != nil %}
+
+	{% assign tasks_query 		= "tasks" | db_find: company_id: account._id %}
+	{% assign tasks 					= tasks_query.results %}
+
+	{% include "tasks" %}
+
+{% endif %}
