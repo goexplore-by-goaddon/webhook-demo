@@ -1,6 +1,6 @@
 {% if account != nil %}
 
-	{% assign task_id = _id_new %}
+	{% assign task_id = "" | _id_new %}
 
 	{% assign tasks_insertion = "create_task" | webhook: company_id: account._id, name: params.name, id: task_id %}
 
