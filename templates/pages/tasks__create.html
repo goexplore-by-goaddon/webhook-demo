@@ -1,13 +1,12 @@
 {% if account != nil %}
 
-	{% assign id = _id_new %}
+	{% assign task_id = _id_new %}
 
-	{% assign tasks_insertion = "create_task" | webhook: company_id: account._id, name: params.name, id: id %}
+	{% assign tasks_insertion = "create_task" | webhook: company_id: account._id, name: params.name, id: task_id %}
 
 	{% if tasks_insertion.code == 200 %}
 		alertify.error("{{ l.not_created }}");
 	{% else %}
-		{% assign task_id 	= tasks_insertion._id %}
 		{% assign task_name = params.name %}
 		$('[data-id="create_task"]').find(":input[name='name']").val("");
 		$('[data-id="tasks"]').prepend('{% include "tasks/task" %}');
