@@ -1,9 +1,9 @@
 {% if account != nil %}
 
 	{% assign tasks_response 	= "tasks" | webhook: company_id: account._id, id: params.id %}
-	{% assign task 						= tasks_response.body.first %}
+	{% assign task 						= tasks_response.body %}
 
-	{% if tasks == nil %}
+	{% if task == nil %}
 		alertify.error("{{ l.not_found }}");
 	{% elsif task.name == params.name %}
 		alertify.message("{{ l.not_updated }}");
