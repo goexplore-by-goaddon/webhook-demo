@@ -1,7 +1,7 @@
 {
 	"tasks": {
 		"method": "post",
-		"url": "https://jsonplaceholder.typicode.com/todos",
+		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks",
 		"headers": {
 			"Content-Type": "application/json"
 		}
