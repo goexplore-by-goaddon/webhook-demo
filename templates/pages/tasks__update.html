@@ -1,18 +1,20 @@
 {% if account != nil %}
 
 	{% assign tasks_response 	= "tasks" | webhook: company_id: account._id, id: params.id %}
-	{% assign task 						= tasks_response.body %}
 
-	{% if task == nil %}
+	{% if tasks_response.code != 200 %}
 		alertify.error("{{ l.not_found }}");
-	{% elsif task.name == params.name %}
-		alertify.message("{{ l.not_updated }}");
 	{% else %}
-		{% assign tasks_update = "update_task" | webhook: name: params.name, id: params.id %}
-		{% if tasks_update.code != 200 %}
-			alertify.error("{{ l.unknown_error }}");
+		{% assign task = tasks_response.body %}
+		{% if task.name == params.name %}
+			alertify.message("{{ l.not_updated }}");
 		{% else %}
-			alertify.success("{{ l.updated }}");
+			{% assign tasks_update = "update_task" | webhook: name: params.name, id: params.id %}
+			{% if tasks_update.code != 200 %}
+				alertify.error("{{ l.unknown_error }}");
+			{% else %}
+				alertify.success("{{ l.updated }}");
+			{% endif %}
 		{% endif %}
 	{% endif %}
 {% endif %}
