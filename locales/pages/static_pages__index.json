@@ -1,5 +1,6 @@
 {
 	"en": {
-		"headline": "Welcome to this webhook demo"
+		"headline": "Welcome",
+		"explainer": "This is a demo task manager"
 	}
 }

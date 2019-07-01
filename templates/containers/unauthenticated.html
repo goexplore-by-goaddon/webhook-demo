@@ -1,0 +1,32 @@
+<div class="w-100 flex-shrink-0">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white pb-3">
+		<a class="navbar-brand" href="/{{ params.locale }}">{{ l.logo }}</a>
+		<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link lead" href="/{{ params.locale }}">{{ l.frontpage }}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link lead" href="/{{ params.locale }}/users/sign_up">{{ l.sign_up }}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link lead" href="/{{ params.locale }}/users/sign_in">{{ l.sign_in }}</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="px-md-5 mt-3 mb-5">
+			{% yield %}
+		</div>
+	</div>
+</div>
+
+<footer class="footer mt-auto py-2 bg-dark">
+	<div class="container">
+		<p class="text-light pt-3">{{ l.footer }}</p>
+	</div>
+</footer>
