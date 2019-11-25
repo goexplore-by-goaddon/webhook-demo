@@ -1,7 +1,7 @@
 {
 	"create_task": {
 		"method": "post",
-		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks",
+		"url": "https://api.your-backend.com/tasks",
 		"headers": {
 			"Content-Type": "application/json"
 		},

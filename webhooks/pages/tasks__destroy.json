@@ -1,14 +1,14 @@
 {
 	"tasks": {
 		"method": "get",
-		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks/{{ id }}?company_id={{ company_id }}",
+		"url": "https://api.your-backend.com/tasks/{{ id }}?company_id={{ company_id }}",
 		"headers": {
 			"Content-Type": "application/json"
 		}
 	},
 	"destroy_task": {
 		"method": "delete",
-		"url": "https://my-json-server.typicode.com/goexplore-by-goaddon/webhook-demo-api-data/tasks/{{ id }}",
+		"url": "https://api.your-backend.com/tasks/{{ id }}",
 		"headers": {
 			"Content-Type": "application/json"
 		}

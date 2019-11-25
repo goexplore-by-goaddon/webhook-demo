@@ -1,5 +1,5 @@
 <h5 class="mb-3">{{ l.headline }}</h5>
-<form class="update-task" action="/{{ params.locale }}/tasks/{{ task.id }}.js" method="patch" data-remote="true">
+<form class="update-task" action="{{ 'tasks__update' | path_for: id: task.id, format: 'js' }}" method="patch" data-remote="true">
 	<div class="input-group">
 		<input class="form-control mr-3" type="text" name="name" placeholder="{{ l.placeholders.name }}" value="{{ task.name }}">
 		<input class="btn btn-outline-primary" type="submit" value="{{ l.buttons.update }}">
