@@ -1,6 +1,6 @@
 {
-	"en": {
-		"created": "You've created a task",
-		"not_created": "The task wasn't created"
-	}
+  "en": {
+    "created": "You have created a task",
+    "not_created": "The task could not be created"
+  }
 }

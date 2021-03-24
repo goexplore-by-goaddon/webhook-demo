@@ -1,15 +1,15 @@
 <h5 class="mb-3">{{ l.headline }}</h5>
 <form data-id="create_task" action="{{ 'tasks__create' | path_for: format: 'js' }}" method="post" data-remote="true">
-	<div class="input-group">
-		<input class="form-control mr-3" type="text" name="name" placeholder="{{ l.placeholders.name }}">
-		<input class="btn btn-outline-primary" type="submit" value="{{ l.buttons.create }}">
-	</div>
+  <div class="input-group">
+    <input class="form-control" type="text" name="name" placeholder="{{ l.placeholders.name }}">
+    <input class="btn btn-outline-primary" type="submit" value="{{ l.buttons.create }}">
+  </div>
 </form>
 
 <div class="mt-5" data-id="tasks">
-	{% for task in tasks %}
-		{% assign task_id 	= task.id %}
-		{% assign task_name = task.name %}
-		{% include "tasks/task" %}
-	{% endfor %}
+  {% for task in tasks %}
+    {% assign task_id   = task.id %}
+    {% assign task_name = task.name %}
+    {% include "tasks/task" %}
+  {% endfor %}
 </div>

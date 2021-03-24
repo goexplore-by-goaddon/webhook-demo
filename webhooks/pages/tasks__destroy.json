@@ -1,16 +1,16 @@
 {
-	"tasks": {
-		"method": "get",
-		"url": "https://api.your-backend.com/tasks/{{ id }}?company_id={{ company_id }}",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	},
-	"destroy_task": {
-		"method": "delete",
-		"url": "https://api.your-backend.com/tasks/{{ id }}",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	}
+  "tasks": {
+    "method": "get",
+    "url": "https://api.your-backend.com/tasks/{{ id }}?company_id={{ company_id }}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "destroy_task": {
+    "method": "delete",
+    "url": "https://api.your-backend.com/tasks/{{ id }}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
 }

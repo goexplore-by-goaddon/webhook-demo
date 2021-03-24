@@ -1,19 +1,19 @@
 {% if account != nil %}
 
-	{% assign tasks_response 	= "tasks" | webhook: company_id: account._id, id: params.id %}
+  {% assign tasks_response   = "tasks" | webhook: company_id: account._id, id: params.id %}
 
-	{% if tasks_response.code != 200 %}
-		alertify.error("{{ l.not_found }}");
-	{% else %}
-		{% assign tasks_deletion = "destroy_task" | webhook: id: params.id %}
+  {% if tasks_response.code != 200 %}
+    flashAlert("error", "{{ l.not_found }}");
+  {% else %}
+    {% assign tasks_deletion = "destroy_task" | webhook: id: params.id %}
 
-		{% if tasks_deletion.code != 200 %}
-			alertify.error("{{ l.not_destroyed }}");
-		{% else %}
-			var task = $('[data-id="' + "{{ params.id }}" + '"]');
-			task.prev("hr").remove();
-			task.remove();
-			alertify.message("{{ l.destroyed }}");
-		{% endif %}
-	{% endif %}
+    {% if tasks_deletion.code != 200 %}
+      flashAlert("error", "{{ l.not_destroyed }}");
+    {% else %}
+      var task = $('[data-id="' + "{{ params.id }}" + '"]');
+      task.prev("hr").remove();
+      task.remove();
+      flashAlert("message", "{{ l.destroyed }}");
+    {% endif %}
+  {% endif %}
 {% endif %}

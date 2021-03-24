@@ -1,13 +1,13 @@
 {% if account != nil %}
 
-	{% assign tasks_response 	= "tasks" | webhook: company_id: account._id, id: params.id %}
+  {% assign tasks_response   = "tasks" | webhook: company_id: account._id, id: params.id %}
 
-	{% if tasks_response.code != 200 %}
-		<h5 class="mb-3">{{ l.not_found }}</h5>
-	{% else %}
-		{% assign task = tasks_response.body %}
+  {% if tasks_response.code != 200 %}
+    <h5 class="mb-3">{{ l.not_found }}</h5>
+  {% else %}
+    {% assign task = tasks_response.body %}
 
-		{% include "task" %}
+    {% include "task" %}
 
-	{% endif %}
+  {% endif %}
 {% endif %}

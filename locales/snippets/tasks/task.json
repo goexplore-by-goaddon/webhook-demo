@@ -1,9 +1,9 @@
 {
-	"en": {
-		"created": "created",
-		"ago": "ago",
-		"buttons": {
-			"destroy": "Destroy"
-		}
-	}
+  "en": {
+    "created": "created",
+    "ago": "ago",
+    "buttons": {
+      "destroy": "Destroy"
+    }
+  }
 }

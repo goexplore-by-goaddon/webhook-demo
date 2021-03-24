@@ -1,11 +1,11 @@
 {
-	"en": {
-		"headline": "Tasks",
-		"placeholders": {
-			"name": "Enter task name..."
-		},
-		"buttons": {
-			"create": "Create"
-		}
-	}
+  "en": {
+    "headline": "Tasks",
+    "placeholders": {
+      "name": "Enter task name..."
+    },
+    "buttons": {
+      "create": "Create"
+    }
+  }
 }
