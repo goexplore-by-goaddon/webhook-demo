@@ -1,7 +1,7 @@
 {
   "tasks": {
     "method": "get",
-    "url": "http://0.0.0.0:3005/tasks",
+    "url": "http://0.0.0.0:3005/tasks.json",
     "headers": {
       "Authorization": "{{ token }}",
       "Content-Type": "application/json"
