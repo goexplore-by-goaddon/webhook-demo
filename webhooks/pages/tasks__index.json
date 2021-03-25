@@ -1,7 +1,7 @@
 {
   "tasks": {
     "method": "get",
-    "url": "https://api.your-backend.com/tasks?company_id={{ company_id }}",
+    "url": "http://0.0.0.0:3005/tasks?company_id={{ company_id }}",
     "headers": {
       "Content-Type": "application/json"
     }

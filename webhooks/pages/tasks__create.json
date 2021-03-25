@@ -1,12 +1,12 @@
 {
   "create_task": {
     "method": "post",
-    "url": "https://api.your-backend.com/tasks",
+    "url": "http://0.0.0.0:3005/tasks",
     "headers": {
       "Content-Type": "application/json"
     },
     "body": {
-      "id": "{{ id }}",
+      "_id": "{{ _id }}",
       "name": "{{ name }}",
       "company_id": "{{ company_id }}"
     }

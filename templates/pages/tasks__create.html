@@ -2,7 +2,7 @@
 
   {% assign task_id = "" | new_object_id %}
 
-  {% assign tasks_insertion = "create_task" | webhook: company_id: account._id, name: params.name, id: task_id %}
+  {% assign tasks_insertion = "create_task" | webhook: company_id: account._id, name: params.name, _id: task_id %}
 
   {% if tasks_insertion.code != 201 %}
     flashAlert("error", "{{ l.not_created }}");
