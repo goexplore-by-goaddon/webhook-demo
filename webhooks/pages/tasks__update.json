@@ -1,15 +1,17 @@
 {
   "tasks": {
     "method": "get",
-    "url": "http://0.0.0.0:3005/tasks/{{ id }}?company_id={{ company_id }}",
+    "url": "http://0.0.0.0:3005/tasks/{{ _id }}",
     "headers": {
+      "Authorization": "{{ token }}",
       "Content-Type": "application/json"
     }
   },
   "update_task": {
     "method": "patch",
-    "url": "http://0.0.0.0:3005/tasks/{{ id }}",
+    "url": "http://0.0.0.0:3005/tasks/{{ _id }}",
     "headers": {
+      "Authorization": "{{ token }}",
       "Content-Type": "application/json"
     },
     "body": {

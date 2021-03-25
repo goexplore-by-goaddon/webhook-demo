@@ -3,7 +3,10 @@
     "headline": "Welcome",
     "explainer": {
     "p1": "This is a demo task manager. The goal is to demonstrate how to make HTTP requests (webhooks).",
-    "p2": "Simply sign up for an account and try creating a few tasks for yourself."
+    "p2": "Simply sign up for an account and try creating a few tasks for yourself.",
+    "p3": "The recipient of your API requests is the",
+    "p4": "API demo",
+    "p5": "another demo project of ours. Since your authorization token is simply the _id of your account you should not create tasks that contains sentitive or identifiable details about yourself."
     }
   }
 }

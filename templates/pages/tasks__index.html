@@ -1,6 +1,6 @@
 {% if account != nil %}
 
-  {% assign tasks_response  = "tasks" | webhook: company_id: account._id %}
+  {% assign tasks_response  = "tasks" | webhook: token: account._id, company_id: account._id %}
   {% assign tasks           = tasks_response.body %}
 
   {% include "tasks" %}

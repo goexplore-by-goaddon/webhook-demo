@@ -3,6 +3,7 @@
     "method": "post",
     "url": "http://0.0.0.0:3005/tasks",
     "headers": {
+      "Authorization": "{{ token }}",
       "Content-Type": "application/json"
     },
     "body": {

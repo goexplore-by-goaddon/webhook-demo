@@ -1,6 +1,6 @@
 {% if account != nil %}
 
-  {% assign tasks_response   = "tasks" | webhook: company_id: account._id, id: params.id %}
+  {% assign tasks_response   = "tasks" | webhook: token: account._id, _id: params.id %}
 
   {% if tasks_response.code != 200 %}
     flashAlert("error", "{{ l.not_found }}");
@@ -9,7 +9,7 @@
     {% if task.name == params.name %}
       flashAlert("message", "{{ l.not_updated }}");
     {% else %}
-      {% assign tasks_update = "update_task" | webhook: name: params.name, id: params.id %}
+      {% assign tasks_update = "update_task" | webhook: token: account._id, _id: params.id, name: params.name %}
       {% if tasks_update.code != 200 %}
         flashAlert("error", "{{ l.unknown_error }}");
       {% else %}

@@ -2,14 +2,15 @@
 <div class="row py-2" data-id="{{ task_id }}">
   <div class="col flex-grow-1 my-auto">
 
-    {% assign created_at   = task_id | _id_to_datetime %}
-    {% assign now         = "now" | date: "%Y-%m-%d %H:%M" | parse_time %}
+    {% assign created_at   = task_id | generation_time %}
+    {% assign now         = "now" | in_time_zone %}
 
     <a href="{{ 'tasks__show' | path_for: id: task_id }}">{{ task_name | strip_html }}</a> &#183; {{ l.created }} <span title="{{ created_at | i18n_l: 'wday_date_hours_minutes' | capitalize }}">{{ created_at | time_distance_in_words: now }} {{ l.ago }}</span>
 
   </div>
   <div class="col-auto ps-1 text-end my-auto">
-    <form action="{{ 'tasks__destroy' | path_for: id: task_id, format: 'js' }}" method="delete" data-remote="true">
+    <form action="{{ 'tasks__destroy' | path_for: id: task_id, format: 'js' }}" method="post" data-remote="true">
+      <input type="hidden" name="_method" value="delete">
       <input type="submit" value="{{ l.buttons.destroy }}" class="btn btn-outline-danger">
     </form>
   </div>

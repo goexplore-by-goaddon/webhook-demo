@@ -1,11 +1,11 @@
 {% if account != nil %}
 
-  {% assign tasks_response   = "tasks" | webhook: company_id: account._id, id: params.id %}
+  {% assign tasks_response   = "tasks" | webhook: token: account._id, _id: params.id %}
 
   {% if tasks_response.code != 200 %}
     flashAlert("error", "{{ l.not_found }}");
   {% else %}
-    {% assign tasks_deletion = "destroy_task" | webhook: id: params.id %}
+    {% assign tasks_deletion = "destroy_task" | webhook: token: account._id, _id: params.id %}
 
     {% if tasks_deletion.code != 200 %}
       flashAlert("error", "{{ l.not_destroyed }}");
